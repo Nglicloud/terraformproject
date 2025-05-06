@@ -4,6 +4,7 @@ pipeline {
     environment {
         // This will inject both AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY
         AWS_DEFAULT_REGION = 'ap-south-1'
+        PATH = "C:\\Program Files\Terraform;${env.PATH}"
     }
     // corrected the file name
     stages {
