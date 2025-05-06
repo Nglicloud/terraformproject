@@ -39,3 +39,4 @@ pipeline {
         }
     }
 }
+// updated the Terraform version
