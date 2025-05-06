@@ -16,7 +16,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-jenkins']]) {
-                    sh 'terraform init'
+                    bat 'terraform init'
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-jenkins']]) {
-                    sh 'terraform plan -var-file="terraform.tfvars"'
+                    bat 'terraform plan -var-file="terraform.tfvars"'
                 }
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 input message: "Proceed with Terraform Apply?"
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-jenkins']]) {
-                    sh 'terraform apply -auto-approve -var-file="terraform.tfvars"'
+                    bat 'terraform apply -auto-approve -var-file="terraform.tfvars"'
                 }
             }
         }
