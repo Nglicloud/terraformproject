@@ -34,7 +34,7 @@ pipeline {
             steps {
                 input message: "Proceed with Terraform Apply?"
                 withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-jenkins']]) {
-                    bat 'terraform apply -auto-approve -var-file="terraform.tfvars"'
+                    bat 'terraform destroy -auto-approve -var-file="terraform.tfvars"'
                 }
             }
         }
