@@ -1,3 +1,3 @@
-ami_id         = "ami-002f6e91abff6eb96"
+ami_id         = "ami-00ca570c1b6d79f36"
 instance_type  = "t2.micro"
 region         = "ap-south-1"
